@@ -1,10 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
+export class Comment {
 
-export class Post {
-
-   
     @Prop()
     title : string;
 
@@ -12,8 +10,13 @@ export class Post {
     description : string;
 
     @Prop()
-    user_id : string;
+    post_id : string;
+    
+    @Prop()
+    user_id : number;
+    
 
 }
 
-export const PostSchema = SchemaFactory.createForClass(Post);
+
+export const CommentSchema = SchemaFactory.createForClass(Comment);
